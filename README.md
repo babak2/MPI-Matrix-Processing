@@ -115,21 +115,21 @@ The program generates a random matrix for demonstration purposes, and the initia
 const int matrix_size = 10;  // Adjust the matrix size for debugging
 
 
-## Notes
+# Notes
 
 - The MPI code section is marked with #ifdef USE_MPI. Ensure to define the macro USE_MPI during compilation to enable MPI features.
             
 - The MPI-related code is enclosed within preprocessor directives, allowing easy switching between MPI and non-MPI versions during compilation.
 
 
-## License
+# License
 
 The mpi-matrix-processing program is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
 ![Creative Commons License](https://i.creativecommons.org/l/by/4.0/88x31.png)
 
 
-## Author 
+# Author 
 
 Babak Mahdavi Ardestani
 
