@@ -88,7 +88,7 @@ Output:
 
 Execution Time (Non-MPI): 8e-06 seconds
 
-## speed up calculation
+## Speed up calculation
 
 Calculating speedup (performance) gaind using MPI parallel computation: 
 
