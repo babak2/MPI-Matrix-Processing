@@ -8,7 +8,7 @@ This program demonstrates the use of MPI (Message Passing Interface) to parallel
 
 - MPI Parallelization: Utilizes MPI to distribute the matrix elements among multiple processes, enabling parallel computation.
 
-- The program prints the execution time for each separate run (in the case of MPI, for each number of processes used).
+- The execution time for both non-MPI and MPI (for each number of processes used) versions is printed to the console for performance analysis.
 
 Using these printouts, we can manually do the following:
 
@@ -65,21 +65,24 @@ To execute the non-MPI version, use the following command:
 
 # Output examples 
 
-First MPI run, using 4 processes: 
+First MPI run, using 4 parallel processes: 
 
-mpirun --oversubscribe -np 4 ./mpi-matrix-processing
+`mpirun --oversubscribe -np 4 ./mpi-matrix-processing`
 
 Output: 
 
 Execution Time (MPI): 7.55e-07 seconds
+
 Execution Time (MPI): 2.03e-07 seconds
+
 Execution Time (MPI): 1.42e-07 seconds
+
 Execution Time (MPI): 2.02e-07 seconds
 
 
 Secondly, no-MP run:
 
-./matrix-processing-no-mpi
+`./matrix-processing-no-mpi`
 
 Output: 
 
@@ -90,7 +93,7 @@ Execution Time (Non-MPI): 8e-06 seconds
 Calculating speedup (performance) gaind using MPI parallel computation: 
 
 
-Speedup  =   Execution Time (Non-MPI)​ / Total Execution Time (MPI)
+Speedup = Execution Time (Non-MPI)​ / Total Execution Time (MPI)
 
 Total Execution Time (MPI) = Execution Time1 ​+ Execution Time2 ​+ Execution Time3 ​+ Execution Time4​
 
@@ -107,18 +110,15 @@ So, the overall speedup achieved by using MPI compared to the non-MPI version in
 
 # Matrix Size Configuration
 
-The program generates a random matrix for demonstration purposes, and the matrix size is reduced for debugging. You can modify the matrix_size constant in the source code to adjust the size of the matrix.
+The program generates a random matrix for demonstration purposes, and the initial matrix size is set to a smaller value (const int matrix_size = 10) for debugging convenience. If you wish to work with larger matrices, you can modify the matrix_size constant in the source code to adjust the size accordingly.
 
 const int matrix_size = 10;  // Adjust the matrix size for debugging
+
 
 ## Notes
 
 - The MPI code section is marked with #ifdef USE_MPI. Ensure to define the macro USE_MPI during compilation to enable MPI features.
-    
-- The program generates a random matrix, and the size is reduced for debugging purposes. Adjust the matrix_size constant to change the size of the matrix.
-    
-- The execution time for both MPI and non-MPI versions is printed to the console for performance analysis.
-    
+            
 - The MPI-related code is enclosed within preprocessor directives, allowing easy switching between MPI and non-MPI versions during compilation.
 
 
