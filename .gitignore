@@ -1,0 +1,4 @@
+# Ignore executable files
+*.exe
+*.out
+
